@@ -3,6 +3,9 @@
   "name": "Cache Cleaner",
   "description": "Cleans your local browser cache of all data older than 1 day.",
   "version": "1.0",
+  "incognito": "split",
+  "minimum_chrome_version": "19.0.0.0",
+  "offline_enabled": false,
   "browser_action": {
     "name":"Cache Cleaner"
   },
