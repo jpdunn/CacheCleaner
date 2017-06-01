@@ -10,7 +10,7 @@
       var oneDayAgo;
 
 
-      oneDayAgo = (new Date()).getTime() - 86400;
+      oneDayAgo = (new Date()).getTime() - 86400000;
 
       chrome.browsingData.removeCache({
         "since": oneDayAgo
