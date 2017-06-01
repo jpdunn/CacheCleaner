@@ -1,20 +1,85 @@
 <!doctype html>
 <html>
 <head>
-    <title>Cache Cleaner Options</title>
+  <title>Cache Cleaner Options</title>
 </head>
 <body>
-<header>
-Cache Cleaner Options:
-</header>
-		<ul>
-			<li>
-			<label for="startEnabled">
-				Start extension enabled:
-			</label>
-			<input type="checkbox" name="startEnabled" id="startEnabled" />
-			</li>
-		</ul>
-    <script type="text/javascript" src="options.js"></script>
+  <header>
+    Cache Cleaner Options:
+  </header>
+  <ul>
+    <li>
+      <label for="startEnabled">
+        Start extension enabled:
+      </label>
+      <input type="checkbox" name="startEnabled" id="startEnabled" />
+    </li>
+  </ul>
+
+  <h3>Remove the following types of data: </h3>
+  <ul>
+    <li>
+      <label for="removeAppCache">
+        App Cache:
+      </label>
+      <input type="checkbox" name="removeAppCache" id="removeAppCache" />
+    </li>
+    <li>
+      <label for="removeCache">
+        Cache Data:
+      </label>
+      <input type="checkbox" name="removeCache" id="removeCache" />
+    </li>
+    <li>
+      <label for="removeCookies">
+        Cookies:
+      </label>
+      <input type="checkbox" name="removeCookies" id="removeCookies" />
+    </li>
+    <li>
+      <label for="removeDownloads">
+        Downloads:
+      </label>
+      <input type="checkbox" name="removeDownloads" id="removeDownloads" />
+    </li>
+    <li>
+      <label for="removeFileSystems">
+        File Systems:
+      </label>
+      <input type="checkbox" name="removeFileSystems" id="removeFileSystems" />
+    </li>
+    <li>
+      <label for="removeFormData">
+        Form Data:
+      </label>
+      <input type="checkbox" name="removeFormData" id="removeFormData" />
+    </li>
+    <li>
+      <label for="removeHistory">
+        History:
+      </label>
+      <input type="checkbox" name="removeHistory" id="removeHistory" />
+    </li>
+    <li>
+      <label for="removeIndexedDB">
+        Indexed DB:
+      </label>
+      <input type="checkbox" name="removeIndexedDB" id="removeIndexedDB" />
+    </li>
+    <li>
+      <label for="removePasswords">
+        Passwords:
+      </label>
+      <input type="checkbox" name="removePasswords" id="removePasswords" />
+    </li>
+    <li>
+      <label for="removeWebSQL">
+        Web SQL:
+      </label>
+      <input type="checkbox" name="removeWebSQL" id="removeWebSQL" />
+    </li>
+  </ul>
+
+  <script type="text/javascript" src="options.js"></script>
 </body>
 </html>
