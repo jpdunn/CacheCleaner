@@ -27,7 +27,7 @@ saveButtonEl = document.getElementById("save");
 
 
 function saveSettings(){
-  localStorage["startEnabled"] = startEnabledEl.checked;
+  localStorage["cc.startEnabled"] = startEnabledEl.checked;
 }
 
 
@@ -35,7 +35,7 @@ function loadLocalStorageSettings() {
   var checkedValue;
 
 
-  checkedValue = localStorage["startEnabled"];
+  checkedValue = localStorage["cc.startEnabled"];
 
   // Storing a value into local storage means it gets treated as a string
   // irrespective of what the value originally was. Because Javascript has
