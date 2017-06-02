@@ -36,7 +36,17 @@ function loadLocalStorageSettings() {
 
 
   checkedValue = localStorage["startEnabled"];
-  startEnabledEl.checked = checkedValue;
+
+  // Storing a value into local storage means it gets treated as a string
+  // irrespective of what the value originally was. Because Javascript has
+  // no notion of 'parsing' a string to a boolean value this is the best
+  // we can do for now. This may get revisited if an easier solution is found.
+  if (checkedValue === 'true'){
+    startEnabledEl.checked = true;
+  }else{
+    startEnabledEl.checked = false;
+  }
+
 }
 
 saveButtonEl.addEventListener("click", saveSettings);
