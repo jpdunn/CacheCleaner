@@ -23,7 +23,7 @@ historyEl = document.getElementById("removeHistory");
 indexedDBEl = document.getElementById("removeIndexedDB");
 passwordsEl = document.getElementById("removePasswords");
 webSQLEl = document.getElementById("removeWebSQL");
-saveButtonEl = document.getElementById("saveButton");
+saveButtonEl = document.getElementById("save");
 
 
 function saveSettings(){
