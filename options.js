@@ -13,19 +13,22 @@ var saveButtonEl;
 
 
 startEnabledEl = document.getElementById("startEnabled");
-appCacheEl = document.getElementById("removeAppCache");
-cacheDataEl = document.getElementById("removeCache");
-cookiesEl = document.getElementById("removeCookies");
-downloadsEl = document.getElementById("removeDownloads");
-fileSystemsEl = document.getElementById("removeFileSystems");
-formDataEl = document.getElementById("removeFormData");
-historyEl = document.getElementById("removeHistory");
-indexedDBEl = document.getElementById("removeIndexedDB");
-passwordsEl = document.getElementById("removePasswords");
-webSQLEl = document.getElementById("removeWebSQL");
+appCacheEl = document.getElementById("appcache");
+cacheDataEl = document.getElementById("cache");
+cookiesEl = document.getElementById("cookies");
+downloadsEl = document.getElementById("downloads");
+fileSystemsEl = document.getElementById("fileSystems");
+formDataEl = document.getElementById("formData");
+historyEl = document.getElementById("history");
+indexedDBEl = document.getElementById("indexedDB");
+passwordsEl = document.getElementById("passwords");
+webSQLEl = document.getElementById("webSQL");
 saveButtonEl = document.getElementById("save");
 
 
+/**
+ * Saves the settings into local storage.
+ */
 function saveSettings(){
   var dataTypes;
   var stringDataTypes;
@@ -61,6 +64,9 @@ function saveSettings(){
 }
 
 
+/**
+ * Loads the stored settings from local storage.
+ */
 function loadLocalStorageSettings() {
   var checkedValue;
   var storedDataTypes;
@@ -81,7 +87,28 @@ function loadLocalStorageSettings() {
   }
 
   storedJSONData = window.atob(storedDataTypes);
+  parseDataTypes(JSON.parse(storedJSONData));
 }
+
+
+/**
+ * Takes the given data types JSON object and parses it to
+ * allow the appropriate checkbox elements to be filled.
+ *
+ * @param dataTypes The JSON object containing the data types that were stored.
+ */
+function parseDataTypes(dataTypes){
+  // Iterate over all the the keys in the JSON object and find the relating
+  // element for it and set the value to be what was stored.
+  _.each(dataTypes, (value, key) => {
+    var typeEl;
+
+
+    typeEl = document.getElementById(key);
+    typeEl.checked = value;
+  });
+}
+
 
 saveButtonEl.addEventListener("click", saveSettings);
 loadLocalStorageSettings();
