@@ -29,7 +29,7 @@ saveButtonEl = document.getElementById("save");
 function saveSettings(){
   var dataTypes;
   var stringDataTypes;
-  var base46DataTypes;
+  var base64DataTypes;
 
 
   // Create a JSON object with all the settings states. This is a direct
@@ -54,10 +54,10 @@ function saveSettings(){
 
   // Now base64 encode the JSON string so that we can easily store
   // it in local storage.
-  base46DataTypes = window.btoa(stringDataTypes);
+  base64DataTypes = window.btoa(stringDataTypes);
 
   localStorage["cc.startEnabled"] = startEnabledEl.checked;
-  localStorage["cc.dataTypes"] = base46DataTypes;
+  localStorage["cc.dataTypes"] = base64DataTypes;
 }
 
 
